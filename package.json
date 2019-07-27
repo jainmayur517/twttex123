@@ -1,0 +1,19 @@
+{
+  "name": "twittex123",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mayur",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.17.1",
+    "js-beautify": "^1.10.1",
+    "request": "^2.88.0",
+    "twitter": "^1.7.1"
+  }
+}
