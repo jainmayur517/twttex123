@@ -20,6 +20,11 @@ app.get("/",function(req,res){
             var users=mainl(res,gh);
     });
 
-    app.listen(3000,function(){
-  console.log("server started!");
-  })
+    app.listen(process.env.PORT,process.env.IP);
+
+
+
+
+  //  app.listen(3000,function(){
+  //console.log("server started!");
+  //})

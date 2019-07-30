@@ -2,6 +2,11 @@ var Twitter = require('twitter');
 require('dotenv').config();
 
 
+
+const MongoClient = require('mongodb').MongoClient;
+
+
+
 module.exports=function(res,gh){
 const CONSUMER_KEY = 'TWITTER_CONSUMER_KEY';
 const CONSUMER_SECRET = 'TWITTER_CONSUMER_SECRET';
@@ -28,6 +33,19 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
   //res.render('web',{users: tweets});
    // console.log((tweets));
     res.send(tweets);
+
+    const uri = "mongodb+srv://twittex123:aakash420@cluster0-p25ur.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  var ins ={gh,tweets};
+  collection.insertOne(ins,function(err,res){
+    console.log("data inserted");
+  });
+  client.close();
+});
+
   }
 });
 }
