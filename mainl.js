@@ -34,7 +34,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
    // console.log((tweets));
     res.send(tweets);
 
-    const uri = "mongodb+srv://twittex123:aakash420@cluster0-p25ur.mongodb.net/test?retryWrites=true&w=majority";
+    const uri = "mongodb+srv://twittex123:xxxxx@cluster0-p25ur.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
